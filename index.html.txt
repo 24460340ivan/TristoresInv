@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación: Tiristores - Miguel Ivan Carrillo</title>
+    <style>
+        :root {
+            --primary-blue: #2c3e8c;
+            --accent-yellow: #fdd835;
+            --text-dark: #333;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Portada */
+        .header-page {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-blue);
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
+        h1 { color: var(--primary-blue); margin: 10px 0; font-size: 2.2rem; }
+        h2 { color: var(--primary-blue); border-left: 5px solid var(--accent-yellow); padding-left: 15px; margin-top: 40px; }
+        h3 { color: #555; margin-top: 25px; border-bottom: 1px solid #eee; }
+
+        .info-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: left;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* Índice */
+        .toc {
+            background: #f0f4f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .toc ul { list-style: none; padding-left: 20px; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { text-decoration: none; color: var(--primary-blue); font-weight: 500; }
+        .toc a:hover { text-decoration: underline; }
+
+        /* Contenido */
+        .content-section {
+            text-align: justify;
+            margin-bottom: 40px;
+        }
+
+        .diagram-placeholder {
+            background: #fffbe6;
+            border: 2px dashed #ffe58f;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: #856404;
+        }
+
+        .highlight {
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; margin: 10px; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-page">
+        <img src="images.png" alt="Logo Institucional" class="logo">
+        <h1>Investigación Documental: Tiristores</h1>
+        <div class="info-box">
+            <strong>Autor:</strong> Miguel Ivan Carrillo Ventura<br>
+            <strong>Materia:</strong> Principios Eléctricos y Aplicaciones Digitales<br>
+            <strong>Fecha:</strong> 30 de septiembre de 2026
+        </div>
+    </header>
+
+    <nav class="toc">
+        <strong>ÍNDICE</strong>
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#que-es">1. ¿Qué es un Tiristor?</a></li>
+            <li><a href="#scr">2. El Rectificador Controlado de Silicio (SCR)</a></li>
+            <li><a href="#diac">3. El DIAC (Diodo para Corriente Alterna)</a></li>
+            <li><a href="#triac">4. El TRIAC (Triodo para Corriente Alterna)</a></li>
+            <li><a href="#conclusion">Conclusión</a></li>
+            <li><a href="#referencias">Referencias</a></li>
+        </ul>
+    </nav>
+
+    <section id="introduccion" class="content-section">
+        <h2>Introducción</h2>
+        <p>En el vasto mundo de la electrónica, especialmente en el área de potencia, existe una familia de componentes semiconductores que actúan como interruptores electrónicos de alta eficiencia: <strong>los tiristores</strong>. Estos dispositivos son fundamentales para controlar grandes cantidades de corriente y voltaje, permitiendo desde el regulador de intensidad de una lámpara hasta el control de motores industriales.</p>
+        <p>A diferencia de los transistores, que pueden amplificar señales, los tiristores están diseñados principalmente para conmutar corriente. Dentro de esta familia, exploraremos al <span class="highlight">SCR</span>, el <span class="highlight">DIAC</span> y el <span class="highlight">TRIAC</span>.</p>
+    </section>
+
+    <hr>
+
+    <section id="que-es" class="content-section">
+        <h2>1. ¿Qué es un Tiristor?</h2>
+        <p>Los tiristores son una familia de dispositivos semiconductores de cuatro capas ($P-N-P-N$) y tres uniones. Se caracterizan por ser <strong>biestables</strong>, pudiendo estar en estado de bloqueo (apagado) o conducción (encendido). Permanecen en conducción mientras la corriente se mantenga por encima de la corriente de mantenimiento ($I_H$).</p>
+    </section>
+
+    <section id="scr" class="content-section">
+        <h2>2. El Rectificador Controlado de Silicio (SCR)</h2>
+        <h3>Estructura y Símbolo</h3>
+        <p>Compuesto por cuatro capas ($P-N-P-N$) con tres terminales: <strong>Ánodo (A)</strong>, <strong>Cátodo (K)</strong> y <strong>Compuerta (G)</strong>.</p>
+        
+        <div class="diagram-placeholder">
+                    </div>
+
+        <h3>Principio de Funcionamiento</h3>
+        <ul>
+            <li><strong>Bloqueo directo:</strong> Ánodo positivo, pero sin señal en G; el SCR no conduce.</li>
+            <li><strong>Disparo:</strong> Un pulso positivo en G activa la conducción de Ánodo a Cátodo.</li>
+            <li><strong>Apagado:</strong> Se apaga cuando la corriente cae por debajo de la corriente de mantenimiento ($I_H$).</li>
+        </ul>
+
+        <h3>Aplicaciones</h3>
+        <p>Fuentes de alimentación controladas, cargadores de baterías y protectores de circuitos (crowbar).</p>
+    </section>
+
+    <section id="diac" class="content-section">
+        <h2>3. El DIAC (Diodo para Corriente Alterna)</h2>
+        <h3>Estructura y Símbolo</h3>
+        <p>Dispositivo simétrico de tres capas sin terminal de control (compuerta). Tiene dos terminales principales: <strong>MT1</strong> y <strong>MT2</strong>.</p>
+        
+        <div class="diagram-placeholder">
+                    </div>
+
+        <h3>Principio de Funcionamiento</h3>
+        <p>Bloquea el flujo en ambas direcciones hasta que el voltaje alcanza el <strong>voltaje de ruptura ($V_{BO}$)</strong>. Al superarlo, el DIAC entra en conducción con resistencia negativa.</p>
+
+        <h3>Aplicaciones</h3>
+        <p>Principalmente como disparador para TRIACs en reguladores de luz (dimmers) y controles de velocidad.</p>
+    </section>
+
+    <section id="triac" class="content-section">
+        <h2>4. El TRIAC (Triodo para Corriente Alterna)</h2>
+        <h3>Estructura y Símbolo</h3>
+        <p>Equivalente a dos SCR en antiparalelo con una compuerta común. Posee terminales <strong>MT1</strong>, <strong>MT2</strong> y <strong>G</strong>.</p>
+        
+        <div class="diagram-placeholder">
+                    </div>
+
+        <h3>Principio de Funcionamiento</h3>
+        <p>Puede dispararse con pulsos positivos o negativos, permitiendo controlar la corriente en <strong>ambos semiciclos</strong> de una señal de corriente alterna (CA).</p>
+
+        <h3>Aplicaciones</h3>
+        <p>Control de velocidad en herramientas eléctricas, relés de estado sólido (SSR) y control de temperatura.</p>
+    </section>
+
+    <section id="conclusion" class="content-section">
+        <h2>Conclusión</h2>
+        <p>Los tiristores constituyen la columna vertebral de la electrónica de potencia. Mientras que el <strong>SCR</strong> es ideal para rectificación controlada en un solo sentido, el <strong>TRIAC</strong> ofrece versatilidad en corriente alterna, y el <strong>DIAC</strong> asegura que los disparos sean precisos y simétricos. Comprender estos componentes permite al estudiante de ingeniería diseñar soluciones eficientes para el control de energía moderna.</p>
+    </section>
+
+    <section id="referencias" class="content-section">
+        <h2>Referencias</h2>
+        <ul>
+            <li>Boylestad, R. L., & Nashelsky, L. (2009). <em>Electrónica: Teoría de circuitos y dispositivos electrónicos</em>. Pearson.</li>
+            <li>Rashid, M. H. (2004). <em>Electrónica de potencia</em>. Pearson Educación.</li>
+            <li>Malvino, A. P., & Bates, D. J. (2007). <em>Principios de Electrónica</em>. McGraw-Hill.</li>
+        </ul>
+    </section>
+
+    <footer>
+        Documento académico creado para la materia de Principios Eléctricos &copy; 2026
+    </footer>
+</div>
+
+</body>
+</html>
